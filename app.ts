@@ -1,23 +1,27 @@
+// required node modules
 import createError from 'http-errors';
-import express, { NextFunction } from 'express';
+import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
-import indexRouter from './routes/index';
-import usersRouter from './routes/users';
+// Routing modules
+import indexRouter from './Routes/index';
+import usersRouter from './Routes/users';
 
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'Views'));
 app.set('view engine', 'ejs');
 
+// middleware configuration
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -29,7 +33,7 @@ app.use(function(req, res, next)
 });
 
 // error handler
-app.use(function(err: createError.HttpError, req: express.Request, res: express.Response, next: NextFunction) 
+app.use(function(err: createError.HttpError, req: express.Request, res: express.Response, next: express.NextFunction) 
 {
   // set locals, only providing error in development
   res.locals.message = err.message;
