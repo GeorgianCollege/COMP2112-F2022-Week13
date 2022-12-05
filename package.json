@@ -1,0 +1,33 @@
+{
+  "name": "comp2112-f2022-ice10",
+  "version": "1.0.0",
+  "description": "Demo Project for COMP2112-F2022-ICE10",
+  "main": "server.js",
+  "author": "Tom Tsiliopoulos",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --watch server.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "jquery": "^3.6.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/debug": "^4.1.7",
+    "@types/ejs": "^3.1.1",
+    "@types/express": "^4.17.14",
+    "@types/http-errors": "^2.0.1",
+    "@types/jquery": "^3.5.14",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.11.10"
+  }
+}
